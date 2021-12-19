@@ -21,3 +21,8 @@ jobs:
       run: dotnet restore
     - name: Publish
       run: dotnet publish -r win-x64 -c Release --self-contained
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: DevOpsScraper
+        path: /home/runner/work/WebScraping/WebScraping/bin/Debug/net6.0
