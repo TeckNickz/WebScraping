@@ -25,4 +25,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: DevOpsScraper
-        path: /home/runner/work/WebScraping/WebScraping/bin/Debug/net6.0
+        path: /home/runner/work/WebScraping/WebScraping/bin/Release/net6.0/win-x64/publish/
