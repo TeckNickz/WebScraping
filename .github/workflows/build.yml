@@ -11,16 +11,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET Core 6.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
+      run: dotnet publish -r win-x64 -c Release -p:'SelfContained=true;PublishSingleFile=true'
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: DevOpsScraper
         path: /home/runner/work/WebScraping/WebScraping/bin/Release/net6.0/win-x64/publish/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: DevOpsChromedriver
+        path: /home/runner/work/WebScraping/WebScraping/bin/Release/net6.0/win-x64/chromedriver.exe
