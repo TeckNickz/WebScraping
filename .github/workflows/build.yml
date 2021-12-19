@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true --no-self-contained
+      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true --no-self-contained -p:IncludeNativeLibrariesForSelfExtract=true
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
