@@ -24,3 +24,8 @@ jobs:
       with:
         name: DevOpsScraper
         path: /home/runner/work/WebScraping/WebScraping/bin/Release/net6.0/win-x64/publish/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: DevOpsChromedriver
+        path: /home/runner/work/WebScraping/WebScraping/bin/Release/net6.0/win-x64/chromedriver.exe
